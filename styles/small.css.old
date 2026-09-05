@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --completed-bg: #d4edda;
+    --completed-border: #28a745;
+    --not-completed-bg: #f8d7da;
+    --not-completed-border: #dc3545;
+    --text-color: #333;
+    --bg-color: #f4f4f9;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    display: none;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+}
+
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    margin-top: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.filter-buttons button:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.course-card {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.course-card.completed {
+    background-color: var(--completed-bg);
+    border: 1px solid var(--completed-border);
+}
+
+.course-card.not-completed {
+    background-color: var(--not-completed-bg);
+    border: 1px solid var(--not-completed-border);
+}
+
+#total-credits {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-links img {
+    filter: invert(1);
+}

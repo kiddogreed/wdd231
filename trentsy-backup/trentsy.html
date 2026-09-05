@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trentsy | Fashion & Lifestyle Destination</title>
+    <meta name="description" content="Spot the trend, claim your style! Your new favorite online destination for fashion, watches, and lifestyle items.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        ⚡ Spot the trend, claim your style! Free shipping on featured bundles.
+    </div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+            
+            <a href="#" class="brand-logo">
+                <img src="logo.jpg" alt="Trentsy Logo">
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#featured">Featured</a>
+                <a href="#fashion">Thrift Fashion</a>
+                <a href="#watches">Watches</a>
+                <a href="#lifestyle">Mugs & Lifestyle</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#cart" class="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="subtitle">ESTABLISHED 2026</p>
+            <h1>Your New Favorite Destination for Fashion & Lifestyle</h1>
+            <p class="tagline">Curated thrift apparel, elegant timepieces, and aesthetic ceramic homeware.</p>
+            <a href="#catalog" class="cta-button">Shop the Collection</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="category-card">
+            <div class="cat-image-placeholder">👗</div>
+            <h3>Thrift Apparel</h3>
+            <p>One-of-a-kind vintage & modern trends</p>
+        </div>
+        <div class="category-card">
+            <div class="cat-image-placeholder">⌚</div>
+            <h3>Fashion Watches</h3>
+            <p>Classic silver, gold & leather timepieces</p>
+        </div>
+        <div class="category-card">
+            <div class="cat-image-placeholder">☕</div>
+            <h3>Aesthetic Mugs</h3>
+            <p>Unique ceramic designs for your home</p>
+        </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <div class="section-header">
+            <h2>Trending Now</h2>
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterCategory('all')">All</button>
+                <button class="tab-btn" onclick="filterCategory('fashion')">Fashion</button>
+                <button class="tab-btn" onclick="filterCategory('watches')">Watches</button>
+                <button class="tab-btn" onclick="filterCategory('lifestyle')">Lifestyle</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            </div>
+    </section>
+
+    <section class="social-banner">
+        <h2>Join the #Trentsy Style Community</h2>
+        <p>Follow us on TikTok, Instagram, and Facebook for daily drops and style inspiration.</p>
+        <div class="social-buttons">
+            <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="social-btn">Instagram</a>
+            <a href="https://tiktok.com" target="_blank" class="social-btn">TikTok</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>TRENTSY</h3>
+                <p>Spot the trend, claim your style!</p>
+                <p class="copyright">&copy; 2026 Trentsy. All rights reserved.</p>
+            </div>
+            <div class="footer-info">
+                <h4>Order Information</h4>
+                <p>Send us a direct message on Facebook or Instagram to place custom orders and inquiries.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

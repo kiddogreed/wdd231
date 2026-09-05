@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Larger screens (768px and up): horizontal nav, multi-column layout
+   ========================================================================== */
+@media (min-width: 768px) {
+    #hamburger {
+        display: none;
+    }
+
+    nav {
+        display: block !important;
+        background-color: var(--color-primary-dark);
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        flex: 0 1 auto;
+    }
+
+    nav a {
+        border-left: none;
+        border-bottom: 4px solid transparent;
+        padding: 1rem 1.5rem;
+    }
+
+    nav a.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--color-accent);
+    }
+
+    main {
+        padding: 2rem 1.5rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card h2 {
+        margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+    }
+}

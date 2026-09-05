@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Russelle Domingo | WDD 231 Home</title>
+    <meta name="description" content="Personal home page for WDD 231 Web Frontend Development I featuring course progress, certificate work, and developer info.">
+    <meta name="John Russelle R Domingo" content="JRRD">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript Files -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="JRRD logo" width="40" height="40">
+            <span>JRRD</span>
+        </div>
+        <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+    </header>
+
+    <nav id="primary-nav">
+        <ul>
+            <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+            <li><a href="chamber/index.html">Chamber Project</a></li>
+            <li><a href="final/index.html">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <div class="grid-container">
+            <section class="card">
+                <h2>About Me</h2>
+                <p>Welcome to my home page! I'm studying Web and Computer Programming as part of the Software Development degree. I enjoy building responsive, accessible websites and solving problems with clean, well-organized code.</p>
+            </section>
+
+            <section class="card">
+                <h2>Student Photo</h2>
+                <img src="images/student-photo.webp" alt="Portrait of JRRD" width="300" height="300" loading="lazy">
+            </section>
+        </div>
+
+        <section class="card courses-section">
+            <h2>Web Certificate Courses</h2>
+            <div class="filter-buttons">
+                <button id="all-btn" class="filter-active">All</button>
+                <button id="cse-btn">CSE</button>
+                <button id="wdd-btn">WDD</button>
+            </div>
+
+            <div id="courses-container" class="courses-grid">
+                <!-- Dynamically populated via course.js -->
+            </div>
+
+            <p id="total-credits">The total credits for courses listed above is <span>0</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/kiddogreed/wdd231" target="_blank" rel="noopener" aria-label="GitHub repository"><span class="icon-badge">GH</span></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn profile"><span class="icon-badge">in</span></a>
+            <a href="https://x.com/yourhandle" target="_blank" rel="noopener" aria-label="X profile"><span class="icon-badge">X</span></a>
+            <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram profile"><span class="icon-badge">IG</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61591578346261" target="_blank" rel="noopener" aria-label="Facebook profile"><span class="icon-badge">FB</span></a>
+        </div>
+        <p>&copy; <span id="currentyear"></span> &bull; JRRD &bull; Makati, Philippines</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Base variables & reset
+   ========================================================================== */
+:root {
+    --color-primary: #1b3a4b;
+    --color-primary-dark: #10262f;
+    --color-accent: #ff8552;
+    --color-accent-dark: #e0703f;
+    --bg-body: #f4f7f8;
+    --bg-card: #ffffff;
+    --text-main: #1b2b34;
+    --text-muted: #55707a;
+    --completed-bg: #e3f6e8;
+    --completed-border: #2fa84f;
+    --not-completed-bg: #fdeceb;
+    --not-completed-border: #d9534f;
+    --radius: 8px;
+    --font-body: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header {
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#hamburger {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+nav {
+    background-color: var(--color-primary-dark);
+    display: none;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    border-left: 4px solid transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--color-accent-dark);
+}
+
+nav a.active {
+    border-left-color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Main layout
+   ========================================================================== */
+main {
+    padding: 1.25rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main > h1 {
+    margin-top: 0;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid #dde4e6;
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    margin: -1rem -1rem 1rem -1rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.card p {
+    color: var(--text-main);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   Courses section
+   ========================================================================== */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-primary);
+    background-color: #fff;
+    color: var(--color-primary);
+    cursor: pointer;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.filter-buttons button:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.filter-buttons button.filter-active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.course-card {
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+
+.course-card h3 {
+    margin: 0 0 0.35rem 0;
+}
+
+.course-card p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.course-card .status {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-card.completed {
+    background-color: var(--completed-bg);
+    border: 2px solid var(--completed-border);
+}
+
+.course-card.completed .status {
+    color: var(--completed-border);
+}
+
+.course-card.not-completed {
+    background-color: var(--not-completed-bg);
+    border: 2px solid var(--not-completed-border);
+}
+
+.course-card.not-completed .status {
+    color: var(--not-completed-border);
+}
+
+#total-credits {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: var(--color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.15s ease;
+}
+
+.icon-badge:hover {
+    background-color: var(--color-accent);
+}
+
+footer p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
