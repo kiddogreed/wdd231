@@ -63,6 +63,9 @@ with the rest of the site.
    contact info, dynamic copyright year, and last-modified date.
 4. **Accessibility & SEO basics** — descriptive `alt` text on logos, `aria-label`/`aria-pressed`
    on the view buttons, a meta description, and Open Graph tags for link previews.
+5. **Favicon** — linked `images/favicon.ico` (root) as the `<link rel="icon">` on both
+   `index.html` and `chamber/directory.html` (via the relative path `../images/favicon.ico`)
+   so the browser tab icon is consistent across pages.
 
 ### Result
 
