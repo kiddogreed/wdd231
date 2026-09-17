@@ -1,0 +1,92 @@
+{
+  "members": [
+    {
+      "name": "Ayala Culinary Co.",
+      "address": "1 Ayala Ave, Makati City, 1226 Metro Manila",
+      "phone": "(02) 8812-3456",
+      "url": "https://www.ayalaculinary.example.com",
+      "image": "ayala-culinary.svg",
+      "membership": 3,
+      "category": "Restaurant",
+      "founded": 2011,
+      "tagline": "Modern Filipino fine dining in the heart of the business district."
+    },
+    {
+      "name": "Makati Tech Solutions",
+      "address": "88 Gil Puyat Ave, Makati City, 1200 Metro Manila",
+      "phone": "(02) 8734-9021",
+      "url": "https://www.makatitechsolutions.example.com",
+      "image": "makati-tech-solutions.svg",
+      "membership": 2,
+      "category": "Information Technology",
+      "founded": 2016,
+      "tagline": "Custom software and IT consulting for growing businesses."
+    },
+    {
+      "name": "Poblacion Coffee House",
+      "address": "45 Polaris St, Poblacion, Makati City, 1210 Metro Manila",
+      "phone": "(02) 8567-2210",
+      "url": "https://www.poblacioncoffee.example.com",
+      "image": "poblacion-coffee-house.svg",
+      "membership": 1,
+      "category": "Cafe",
+      "founded": 2019,
+      "tagline": "Locally roasted coffee and a cozy spot to work or relax."
+    },
+    {
+      "name": "Greenbelt Wellness Spa",
+      "address": "Greenbelt Dr, Makati City, 1223 Metro Manila",
+      "phone": "(02) 8845-6712",
+      "url": "https://www.greenbeltwellness.example.com",
+      "image": "greenbelt-wellness-spa.svg",
+      "membership": 2,
+      "category": "Health & Wellness",
+      "founded": 2014,
+      "tagline": "Full-service spa and wellness treatments for a busy city life."
+    },
+    {
+      "name": "BGC Legal Partners",
+      "address": "26th St, Bonifacio Global City, Taguig, 1634 Metro Manila",
+      "phone": "(02) 8901-3344",
+      "url": "https://www.bgclegalpartners.example.com",
+      "image": "bgc-legal-partners.svg",
+      "membership": 3,
+      "category": "Legal Services",
+      "founded": 2005,
+      "tagline": "Corporate and commercial legal counsel for local businesses."
+    },
+    {
+      "name": "Makati Artisan Bakery",
+      "address": "120 Kalayaan Ave, Makati City, 1209 Metro Manila",
+      "phone": "(02) 8623-7789",
+      "url": "https://www.makatiartisanbakery.example.com",
+      "image": "makati-artisan-bakery.svg",
+      "membership": 1,
+      "category": "Bakery",
+      "founded": 2020,
+      "tagline": "Handcrafted breads and pastries baked fresh every morning."
+    },
+    {
+      "name": "Metro Manila Logistics",
+      "address": "Chino Roces Ave, Makati City, 1231 Metro Manila",
+      "phone": "(02) 8778-4455",
+      "url": "https://www.metromanilalogistics.example.com",
+      "image": "metro-manila-logistics.svg",
+      "membership": 3,
+      "category": "Logistics & Shipping",
+      "founded": 2009,
+      "tagline": "Reliable freight and courier services across the metro."
+    },
+    {
+      "name": "Rizal Financial Advisors",
+      "address": "Rizal Dr, Makati City, 1200 Metro Manila",
+      "phone": "(02) 8556-9988",
+      "url": "https://www.rizalfinancial.example.com",
+      "image": "rizal-financial-advisors.svg",
+      "membership": 2,
+      "category": "Financial Services",
+      "founded": 2012,
+      "tagline": "Personal and business financial planning and investment advice."
+    }
+  ]
+}
