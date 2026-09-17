@@ -32,3 +32,39 @@ JavaScript.
 
 - `index.html` — the graded Course Home Page.
 
+## Week 2 — Chamber of Commerce Directory
+
+### What I built
+
+A Chamber of Commerce member directory page (`chamber/directory.html`) that fetches business
+data from a JSON file and renders it with JavaScript, plus a responsive header/footer shared
+with the rest of the site.
+
+1. **Folder structure** under `chamber/`:
+   - `data/members.json` → an array of at least 8 member businesses, each with name, address,
+     phone, image, url, category, tagline, and a `membership` level (1 = Member, 2 = Silver,
+     3 = Gold).
+   - `images/` → member logos referenced from `members.json`.
+   - `scripts/` → `navigation.js` (shared hamburger menu), `date.js` (footer year/last-modified),
+     `directory.js` (fetches and renders the member cards, handles grid/list toggling).
+   - `styles/` → `normalize.css`, `small.css`, `larger.css` — same mobile-first pattern as the
+     root site.
+2. **`directory.js`**:
+   - Used `async`/`await` with the Fetch API to load `data/members.json` and a `try/catch` to
+     show a friendly error message if the fetch fails.
+   - Built each member card dynamically with `document.createElement` and template literals,
+     including a color-coded membership badge (Member / Silver / Gold).
+   - Added **Grid** and **List** view toggle buttons that swap a CSS class on the container,
+     update `aria-pressed`, and persist the chosen view in `localStorage` so it's remembered
+     between visits.
+3. **`directory.html`** — semantic layout with a `<header>` (logo + business name), `<nav>`
+   (Home / Directory / Join), a `<main>` containing the member count and the `#members-container`
+   (marked `aria-live="polite"` so screen readers announce updates), and a `<footer>` with
+   contact info, dynamic copyright year, and last-modified date.
+4. **Accessibility & SEO basics** — descriptive `alt` text on logos, `aria-label`/`aria-pressed`
+   on the view buttons, a meta description, and Open Graph tags for link previews.
+
+### Result
+
+- `chamber/directory.html` — the graded Chamber Directory page.
+
