@@ -32,6 +32,19 @@ JavaScript.
 
 - `index.html` — the graded Course Home Page.
 
+### Revisions
+
+- **Color contrast fix** (reviewer feedback: color contrast issues) — three default-visible
+  text/background pairs in `styles/small.css` failed WCAG AA's 4.5:1 ratio:
+  - `.filter-buttons button.filter-active` (white text on the `--color-accent` orange, ~2.4:1) →
+    switched the text color to `--text-main` (~6.5:1).
+  - `.course-card.completed .status` (`--completed-border` green text on `--completed-bg`,
+    ~2.7:1) → darkened `--completed-border` to `#1f7a37` (~4.8:1).
+  - `.course-card.not-completed .status` (`--not-completed-border` red text on
+    `--not-completed-bg`, ~3.5:1) → darkened `--not-completed-border` to `#b3413d` (~4.9:1).
+  - Both status colors doubled as the card border color, so darkening the CSS custom properties
+    fixed the failing text without touching the borders or markup.
+
 ## Week 2 — Chamber of Commerce Directory
 
 ### What I built
@@ -70,4 +83,73 @@ with the rest of the site.
 ### Result
 
 - `chamber/directory.html` — the graded Chamber Directory page.
+
+## Week 3 — Chamber Home Page
+
+### What I built
+
+The Chamber of Commerce **home (landing) page** (`chamber/index.html`), sharing the same
+header/nav/footer pattern as `directory.html`, with a hero banner, call to action, events list,
+live weather widget, and randomized member spotlight cards.
+
+1. **`chamber/index.html`**:
+   - Copied `directory.html` as a starting template so the header, navigation (with `Home` now
+     marked `active`), and footer stayed consistent across pages.
+   - **Hero section** — a scalable inline `<img>` (`chamber/images/hero.svg`, a hand-built SVG
+     skyline) instead of a CSS background image, so it scales cleanly at any size, plus a
+     text/CTA overlay.
+   - **Call to action** — a `Join the Chamber` button-styled link pointing to the not-yet-built
+     `join.html`.
+   - **Upcoming Events** — a static list of three chamber events (date, name, location) grouped
+     with the weather section in a `.home-columns` flex wrapper on larger screens.
+   - **Weather section** — current temperature/description plus a 3-day forecast, filled in by
+     `scripts/weather.js`.
+   - **Member Spotlights** — two or three randomly chosen Gold/Silver member cards, filled in by
+     `scripts/spotlights.js`.
+2. **`scripts/weather.js`**:
+   - Two `async`/`await` fetch calls to the **OpenWeatherMap** current-weather and 5-day/3-hour
+     forecast endpoints for Makati, PH, each wrapped in `try/catch` with a friendly fallback
+     message on failure.
+   - The forecast response returns readings every 3 hours, so I filter for the `12:00:00`
+     reading on each of the next 3 days to build one labeled forecast card per day
+     (day name, temperature, condition).
+   - Requires a personal OpenWeatherMap API key dropped into the `apiKey` constant before the
+     weather data will load.
+3. **`scripts/spotlights.js`**:
+   - Reused the existing `data/members.json` fetch pattern from `directory.js`.
+   - Filters members down to `membership === 2` (Silver) or `3` (Gold) only, shuffles them with
+     `Array.sort(() => Math.random() - 0.5)`, and slices a random count of 2–3 so a different
+     set of spotlights appears on every page load/refresh.
+   - Renders each spotlight card with company name, logo, phone, address, website link, and a
+     color-coded membership badge (reusing the `.membership-badge` styles from Week 2).
+4. **CSS (`styles/small.css` / `styles/larger.css`)**:
+   - Added mobile-first styles for `.hero`, `.cta-button`, `.events-list`, `.weather-current`,
+     `.forecast-grid`, and `.spotlights-grid`/`.spotlight-card`, reusing the existing `.card` and
+     `.membership-badge` styles instead of duplicating rules.
+   - In `larger.css`, the hero grows taller with left-aligned overlay text, the events and
+     weather cards sit side by side in a `.home-columns` flexbox, and the spotlight grid expands
+     to 2 then 3 columns — so the main content layout genuinely changes between mobile and larger
+     viewports, not just font sizes.
+   - Fixed a couple of deprecated `word-break: break-word` declarations (flagged by the CSS
+     linter) to `overflow-wrap: break-word` while touching those rules.
+
+### Lessons learned
+
+- Building the home page as a copy of `directory.html` made the shared header/nav/footer
+  trivial to keep consistent, but it meant double-checking every relative link (`index.html`
+  active state, nav order) since a copy-paste page inherits the old page's assumptions.
+- The OpenWeatherMap **free tier forecast endpoint** only returns 3-hour interval data, not a
+  clean daily forecast — filtering for one `12:00:00` reading per day was a simple way to get a
+  labeled 3-day forecast without a paid One Call subscription.
+- Randomizing the spotlight selection with `Array.sort(() => Math.random() - 0.5)` is simple but
+  not a perfectly uniform shuffle; good enough for 2–3 picks out of a handful of members, but
+  worth remembering it's a naive shuffle if the member list grows much larger.
+- Wrapping the events and weather cards in a flex container (`.home-columns`) that only applies
+  `display: flex` inside the `min-width: 768px` media query was a cleaner way to reflow two
+  cards side-by-side on larger screens than trying to do it with `inline-block` and fighting
+  whitespace between inline elements.
+- Reusing existing CSS custom properties and component classes (`.card`, `.membership-badge`)
+  from Week 2 instead of writing new one-off styles kept the new sections visually consistent
+  with the directory page with very little extra CSS.
+
 

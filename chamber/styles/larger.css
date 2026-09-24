@@ -46,10 +46,54 @@
     #members-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .hero-image {
+        height: 420px;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        text-align: left;
+        padding: 3rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        max-width: 40ch;
+        font-size: 1.1rem;
+    }
+
+    main > .card + .card {
+        margin-top: 1.5rem;
+    }
+
+    .home-columns {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .home-columns > .card {
+        flex: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .spotlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1024px) {
     #members-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spotlights-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }

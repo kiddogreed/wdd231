@@ -11,9 +11,9 @@
     --text-main: #1b2b34;
     --text-muted: #55707a;
     --completed-bg: #e3f6e8;
-    --completed-border: #2fa84f;
+    --completed-border: #1f7a37;
     --not-completed-bg: #fdeceb;
-    --not-completed-border: #d9534f;
+    --not-completed-border: #b3413d;
     --radius: 8px;
     --font-body: 'Poppins', sans-serif;
 }
@@ -185,7 +185,7 @@ main > h1 {
 .filter-buttons button.filter-active {
     background-color: var(--color-accent);
     border-color: var(--color-accent);
-    color: #fff;
+    color: var(--text-main);
 }
 
 .courses-grid {
