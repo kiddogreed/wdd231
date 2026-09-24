@@ -172,7 +172,8 @@ main > h1 {
     gap: 0.6rem;
     padding: 1rem;
     color: #fff;
-    background: linear-gradient(180deg, rgba(16, 38, 47, 0.15), rgba(16, 38, 47, 0.75));
+    /* solid-ish scrim (not a gradient) so text contrast is guaranteed regardless of the photo underneath */
+    background-color: rgba(16, 38, 47, 0.72);
 }
 
 .hero-content h1 {
@@ -190,7 +191,7 @@ main > h1 {
 .cta-button {
     display: inline-block;
     background-color: var(--color-accent);
-    color: #fff;
+    color: var(--text-main);
     text-decoration: none;
     font-weight: 600;
     padding: 0.65rem 1.4rem;
@@ -362,7 +363,7 @@ main > h1 {
 .view-buttons button.view-active {
     background-color: var(--color-accent);
     border-color: var(--color-accent);
-    color: #fff;
+    color: var(--text-main);
 }
 
 /* ==========================================================================
