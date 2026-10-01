@@ -4,17 +4,26 @@
 :root {
     --color-primary: #1b3a4b;
     --color-primary-dark: #10262f;
+    --color-primary-dark-rgb: 16, 38, 47;
     --color-accent: #ff8552;
     --color-accent-dark: #e0703f;
+    --color-white: #fff;
+    --color-error: #c0392b;
     --bg-body: #f4f7f8;
     --bg-card: #ffffff;
     --text-main: #1b2b34;
     --text-muted: #55707a;
+    --border-light: #dde4e6;
+    --input-border: #b9c4c9;
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-modal: 0 8px 24px rgba(0, 0, 0, 0.25);
     --member-bg: #f0e6d2;
+    --member-text: #7a5b1e;
     --silver-bg: #e7ebee;
     --silver-border: #9aa7ad;
     --gold-bg: #fdf3d9;
     --gold-border: #d9a441;
+    --bronze-border: #c67c3f;
     --radius: 8px;
     --font-body: 'Poppins', sans-serif;
 }
@@ -49,7 +58,7 @@ img {
    ========================================================================== */
 header {
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-white);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,7 +80,7 @@ header {
 #hamburger {
     background: none;
     border: none;
-    color: #fff;
+    color: var(--color-white);
     font-size: 1.8rem;
     line-height: 1;
     cursor: pointer;
@@ -98,7 +107,7 @@ nav ul {
 
 nav a {
     display: block;
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     padding: 0.9rem 1rem;
     text-align: center;
@@ -129,19 +138,26 @@ main > h1 {
     margin-top: 0;
 }
 
-.card {
+/* shared card-style surface reused by .card, .join-form, .member-card, and .membership-card */
+.card,
+.join-form,
+.member-card,
+.membership-card {
     background-color: var(--bg-card);
-    border: 1px solid #dde4e6;
+    border: 1px solid var(--border-light);
     border-radius: var(--radius);
     padding: 1rem;
+    box-shadow: var(--shadow-card);
+}
+
+.card {
     margin-bottom: 1.25rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .card h2 {
     margin: -1rem -1rem 1rem -1rem;
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-white);
     padding: 0.6rem 1rem;
     text-align: center;
     border-radius: var(--radius) var(--radius) 0 0;
@@ -171,9 +187,9 @@ main > h1 {
     text-align: center;
     gap: 0.6rem;
     padding: 1rem;
-    color: #fff;
+    color: var(--color-white);
     /* solid-ish scrim (not a gradient) so text contrast is guaranteed regardless of the photo underneath */
-    background-color: rgba(16, 38, 47, 0.72);
+    background-color: rgba(var(--color-primary-dark-rgb), 0.72);
 }
 
 .hero-content h1 {
@@ -298,7 +314,7 @@ main > h1 {
     align-items: center;
     gap: 1rem;
     background-color: var(--bg-body);
-    border: 1px solid #dde4e6;
+    border: 1px solid var(--border-light);
     border-radius: var(--radius);
     padding: 0.85rem;
 }
@@ -346,7 +362,7 @@ main > h1 {
 .view-buttons button {
     padding: 0.5rem 1rem;
     border: 1px solid var(--color-primary);
-    background-color: #fff;
+    background-color: var(--color-white);
     color: var(--color-primary);
     cursor: pointer;
     border-radius: var(--radius);
@@ -357,7 +373,7 @@ main > h1 {
 
 .view-buttons button:hover {
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-white);
 }
 
 .view-buttons button.view-active {
@@ -379,14 +395,6 @@ main > h1 {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-}
-
-.member-card {
-    background-color: var(--bg-card);
-    border: 1px solid #dde4e6;
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .member-card img {
@@ -424,7 +432,7 @@ main > h1 {
 
 .membership-badge.member {
     background-color: var(--member-bg);
-    color: #7a5b1e;
+    color: var(--member-text);
 }
 
 .membership-badge.silver {
@@ -476,14 +484,6 @@ main > h1 {
     gap: 1.5rem;
 }
 
-.join-form {
-    background-color: var(--bg-card);
-    border: 1px solid #dde4e6;
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-}
-
 .join-form fieldset {
     border: none;
     padding: 0;
@@ -510,9 +510,9 @@ main > h1 {
     font-family: var(--font-body);
     font-size: 1rem;
     padding: 0.55rem 0.65rem;
-    border: 1px solid #b9c4c9;
+    border: 1px solid var(--input-border);
     border-radius: var(--radius);
-    background-color: #fff;
+    background-color: var(--color-white);
     color: var(--text-main);
 }
 
@@ -524,7 +524,7 @@ main > h1 {
 }
 
 .join-form input:invalid:not(:placeholder-shown) {
-    border-color: #c0392b;
+    border-color: var(--color-error);
 }
 
 .join-form textarea {
@@ -562,11 +562,6 @@ main > h1 {
 }
 
 .membership-card {
-    background-color: var(--bg-card);
-    border: 1px solid #dde4e6;
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     border-top: 4px solid var(--color-primary);
     opacity: 0;
     transform: translateY(16px);
@@ -624,7 +619,7 @@ main > h1 {
 }
 
 .membership-card.level-bronze {
-    border-top-color: #c67c3f;
+    border-top-color: var(--bronze-border);
 }
 
 .membership-card.level-silver {
@@ -644,11 +639,11 @@ main > h1 {
     padding: 1.25rem;
     max-width: 420px;
     width: 90%;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-modal);
 }
 
 .benefits-modal::backdrop {
-    background-color: rgba(16, 38, 47, 0.6);
+    background-color: rgba(var(--color-primary-dark-rgb), 0.6);
 }
 
 .benefits-modal h2 {
@@ -667,7 +662,7 @@ main > h1 {
 
 .modal-close {
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-white);
     border: none;
     padding: 0.5rem 1.1rem;
     border-radius: var(--radius);
@@ -693,7 +688,7 @@ main > h1 {
     justify-content: space-between;
     gap: 1rem;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #dde4e6;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .detail-row:last-child {
@@ -717,7 +712,7 @@ main > h1 {
    ========================================================================== */
 footer {
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-white);
     text-align: center;
     padding: 1.5rem 1rem;
 }
