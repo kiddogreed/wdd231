@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Makati Chamber of Commerce</title>
+    <meta name="description" content="Thank you for applying for membership with the Makati Chamber of Commerce.">
+    <meta name="author" content="John Russelle R Domingo">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <!-- Facebook / Open Graph -->
+    <meta property="og:title" content="Thank You | Makati Chamber of Commerce">
+    <meta property="og:description" content="Thank you for applying for membership with the Makati Chamber of Commerce.">
+    <meta property="og:image" content="https://kiddogreed.github.io/wdd231/chamber/images/chamber-share.svg">
+    <meta property="og:url" content="https://kiddogreed.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript Files -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="Makati Chamber of Commerce logo" width="40" height="40">
+            <span>Makati Chamber of Commerce</span>
+        </div>
+        <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+    </header>
+
+    <nav id="primary-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html" class="active" aria-current="page">Join</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Thank You for Applying!</h1>
+        <p>We appreciate your interest in joining the Makati Chamber of Commerce. A member of our team will be in touch shortly to complete your membership.</p>
+
+        <section class="card application-summary">
+            <h2>Application Summary</h2>
+            <dl id="application-details">
+                <div class="detail-row">
+                    <dt>First Name</dt>
+                    <dd id="out-first-name"></dd>
+                </div>
+                <div class="detail-row">
+                    <dt>Last Name</dt>
+                    <dd id="out-last-name"></dd>
+                </div>
+                <div class="detail-row">
+                    <dt>Email Address</dt>
+                    <dd id="out-email"></dd>
+                </div>
+                <div class="detail-row">
+                    <dt>Mobile Phone</dt>
+                    <dd id="out-phone"></dd>
+                </div>
+                <div class="detail-row">
+                    <dt>Business/Organization Name</dt>
+                    <dd id="out-business-name"></dd>
+                </div>
+                <div class="detail-row">
+                    <dt>Submitted</dt>
+                    <dd id="out-timestamp"></dd>
+                </div>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <p>Makati Chamber of Commerce &bull; 1 Ayala Ave, Makati City, 1226 Metro Manila</p>
+            <p>Phone: (02) 8888-1000 &bull; Email: info@makatichamber.example.com</p>
+        </div>
+        <p>&copy; <span id="currentyear"></span> John Russelle R Domingo &bull; WDD 231</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

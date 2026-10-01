@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join | Makati Chamber of Commerce</title>
+    <meta name="description" content="Apply for membership with the Makati Chamber of Commerce and choose the membership level that fits your business.">
+    <meta name="author" content="John Russelle R Domingo">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <!-- Facebook / Open Graph -->
+    <meta property="og:title" content="Join | Makati Chamber of Commerce">
+    <meta property="og:description" content="Apply for membership with the Makati Chamber of Commerce and choose the membership level that fits your business.">
+    <meta property="og:image" content="https://kiddogreed.github.io/wdd231/chamber/images/chamber-share.svg">
+    <meta property="og:url" content="https://kiddogreed.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript Files -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="Makati Chamber of Commerce logo" width="40" height="40">
+            <span>Makati Chamber of Commerce</span>
+        </div>
+        <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+    </header>
+
+    <nav id="primary-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html" class="active" aria-current="page">Join</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Join the Chamber</h1>
+        <p class="join-intro">Complete the application below to start connecting, growing, and thriving with Makati's business community.</p>
+
+        <div class="join-layout">
+            <form action="thankyou.html" method="get" class="join-form">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+
+                    <label for="first-name">First Name
+                        <input type="text" id="first-name" name="first-name" title="Enter your first name" autocomplete="given-name" required>
+                    </label>
+
+                    <label for="last-name">Last Name
+                        <input type="text" id="last-name" name="last-name" title="Enter your last name" autocomplete="family-name" required>
+                    </label>
+
+                    <label for="org-title">Organizational Title
+                        <input type="text" id="org-title" name="org-title" title="Enter your title within your organization (letters, hyphens, spaces; minimum 7 characters)" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                    </label>
+
+                    <label for="email">Email Address
+                        <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email" placeholder="name@example.com" required>
+                    </label>
+
+                    <label for="phone">Mobile Phone Number
+                        <input type="tel" id="phone" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
+                    </label>
+
+                    <label for="business-name">Business/Organization Name
+                        <input type="text" id="business-name" name="business-name" title="Enter your business or organization name" autocomplete="organization" required>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Membership Details</legend>
+
+                    <label for="membership-level">Membership Level
+                        <select id="membership-level" name="membership-level" title="Select a membership level">
+                            <option value="np">NP Membership</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label for="description">Business/Organization Description
+                        <textarea id="description" name="description" title="Briefly describe your business or organization"></textarea>
+                    </label>
+                </fieldset>
+
+                <input type="hidden" name="timestamp" id="timestamp">
+
+                <button type="submit">Submit Application</button>
+            </form>
+
+            <div class="membership-cards">
+                <article class="membership-card level-np">
+                    <h2>NP Membership</h2>
+                    <p>Free for qualifying non-profit organizations.</p>
+                    <a href="#np-modal" class="modal-link" data-modal-target="np-modal">Learn more</a>
+                </article>
+
+                <article class="membership-card level-bronze">
+                    <h2>Bronze Membership</h2>
+                    <p>An affordable entry point with core directory benefits.</p>
+                    <a href="#bronze-modal" class="modal-link" data-modal-target="bronze-modal">Learn more</a>
+                </article>
+
+                <article class="membership-card level-silver">
+                    <h2>Silver Membership</h2>
+                    <p>Added visibility and event perks for growing businesses.</p>
+                    <a href="#silver-modal" class="modal-link" data-modal-target="silver-modal">Learn more</a>
+                </article>
+
+                <article class="membership-card level-gold">
+                    <h2>Gold Membership</h2>
+                    <p>Our top tier with maximum exposure and savings.</p>
+                    <a href="#gold-modal" class="modal-link" data-modal-target="gold-modal">Learn more</a>
+                </article>
+            </div>
+        </div>
+
+        <dialog id="np-modal" class="benefits-modal">
+            <h2>NP Membership Benefits</h2>
+            <ul>
+                <li>Free membership for registered non-profit organizations</li>
+                <li>Listing in the online member directory</li>
+                <li>Access to monthly networking events</li>
+                <li>Invitation to the annual chamber meeting</li>
+            </ul>
+            <button type="button" class="modal-close" data-modal-close="np-modal">Close</button>
+        </dialog>
+
+        <dialog id="bronze-modal" class="benefits-modal">
+            <h2>Bronze Membership Benefits</h2>
+            <ul>
+                <li>All NP membership benefits</li>
+                <li>Directory listing with business logo</li>
+                <li>Discounted admission to chamber workshops</li>
+                <li>Member-only email newsletter</li>
+            </ul>
+            <button type="button" class="modal-close" data-modal-close="bronze-modal">Close</button>
+        </dialog>
+
+        <dialog id="silver-modal" class="benefits-modal">
+            <h2>Silver Membership Benefits</h2>
+            <ul>
+                <li>All Bronze membership benefits</li>
+                <li>Featured placement in directory search results</li>
+                <li>One complimentary spotlight on the home page per year</li>
+                <li>20% discount on chamber event tickets</li>
+            </ul>
+            <button type="button" class="modal-close" data-modal-close="silver-modal">Close</button>
+        </dialog>
+
+        <dialog id="gold-modal" class="benefits-modal">
+            <h2>Gold Membership Benefits</h2>
+            <ul>
+                <li>All Silver membership benefits</li>
+                <li>Quarterly spotlight placement on the home page</li>
+                <li>Complimentary booth at the annual business expo</li>
+                <li>Free admission to all chamber training sessions</li>
+                <li>50% discount on chamber event tickets</li>
+            </ul>
+            <button type="button" class="modal-close" data-modal-close="gold-modal">Close</button>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <p>Makati Chamber of Commerce &bull; 1 Ayala Ave, Makati City, 1226 Metro Manila</p>
+            <p>Phone: (02) 8888-1000 &bull; Email: info@makatichamber.example.com</p>
+        </div>
+        <p>&copy; <span id="currentyear"></span> John Russelle R Domingo &bull; WDD 231</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

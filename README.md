@@ -152,4 +152,68 @@ live weather widget, and randomized member spotlight cards.
   from Week 2 instead of writing new one-off styles kept the new sections visually consistent
   with the directory page with very little extra CSS.
 
+## Week 4 — Chamber Membership Join Page
+
+### What I built
+
+A membership application form (`chamber/join.html`) and a matching confirmation page
+(`chamber/thankyou.html`), following the same header/nav/footer pattern as the rest of the
+Chamber site.
+
+1. **`chamber/join.html`**:
+   - A `get`-method form posting to `thankyou.html`, with every field wrapped in a `<label>`
+     for accessibility: first/last name (`autocomplete="given-name"`/`"family-name"`), an
+     organizational title field constrained with a `pattern` regex (letters, spaces, hyphens,
+     7+ characters), email (with placeholder example and `autocomplete="email"`), mobile phone
+     (`autocomplete="tel"`), business name (`autocomplete="organization"`), a membership level
+     `<select>` (np/bronze/silver/gold), a description `<textarea>`, and a hidden `timestamp`
+     field.
+   - Four membership cards (NP, Bronze, Silver, Gold), each with a "Learn more" link that opens
+     a matching HTML `<dialog>` modal listing that tier's benefits.
+   - A CSS keyframe animation (`card-reveal`) fades/slides each membership card in on page load,
+     staggered per card with `animation-delay` so the four cards do not appear all at once.
+   - Mobile-first layout stacks the cards below the form; a `min-width: 768px` media query in
+     `larger.css` switches `.join-layout` to `flex-direction: row` so the cards sit beside the
+     form on larger screens.
+2. **`scripts/join.js`**:
+   - Sets the hidden `timestamp` field to the current date/time as soon as the page loads.
+   - Wires up each "Learn more" link and modal close button to `dialog.showModal()` /
+     `dialog.close()` using `data-modal-target`/`data-modal-close` attributes instead of
+     hard-coding four nearly-identical click handlers.
+3. **`chamber/thankyou.html`** + **`scripts/thankyou.js`**:
+   - Because the form uses `method="get"`, the submitted values arrive as a query string on
+     `thankyou.html`. `thankyou.js` reads them with `URLSearchParams` and writes each required
+     field (first name, last name, email, phone, business name, timestamp) into a `<dl>` summary
+     styled to match the rest of the site's `.card` components.
+4. **CSS (`styles/small.css` / `styles/larger.css`)**:
+   - Added `.join-form`, `.membership-cards`/`.membership-card`, `.benefits-modal`, and
+     `.application-summary`/`.detail-row` rules, reusing existing color variables
+     (`--color-primary`, `--color-accent`, `--silver-border`, `--gold-border`) instead of
+     introducing a new palette just for this page.
+   - Styled the native `<dialog>` element directly (including `::backdrop`) rather than
+     building a modal from scratch with JavaScript-managed classes.
+
+### Result
+
+- `chamber/join.html` — the graded membership application form.
+- `chamber/thankyou.html` — the confirmation page displaying the submitted application data.
+
+### Lessons learned
+
+- The native `<dialog>` element with `showModal()`/`close()` handles focus trapping, the
+  backdrop, and `Esc`-to-close for free, which meant the four benefit modals needed almost no
+  custom JavaScript beyond wiring up which button opens which dialog.
+- Using `data-modal-target`/`data-modal-close` attributes plus a `forEach` over
+  `querySelectorAll('.modal-link')` scaled cleanly to four modals without writing four separate
+  near-duplicate event listeners — adding a fifth membership tier later would need zero new JS.
+- A `method="get"` form is a simple way to pass structured data to a confirmation page without a
+  backend: the browser automatically URL-encodes every named field into the query string, and
+  `URLSearchParams` on the receiving page makes reading it back out straightforward.
+- The `pattern` attribute's regex for the organizational title field (`[A-Za-z\s\-]{7,}`) only
+  validates on submit by default; pairing it with a clear `title` attribute matters because that
+  message is the only hint the user gets about *why* the field rejected their input.
+- Triggering the card entrance animation with plain CSS `@keyframes` + staggered
+  `animation-delay` per `:nth-child` avoided any JavaScript/IntersectionObserver complexity for
+  what is ultimately a one-time, page-load-only effect.
+
 

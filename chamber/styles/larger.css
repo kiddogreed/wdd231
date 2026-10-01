@@ -86,6 +86,20 @@
     .spotlights-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .join-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .join-form {
+        flex: 1 1 60%;
+    }
+
+    .membership-cards {
+        flex: 0 0 300px;
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -95,5 +109,9 @@
 
     .spotlights-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .membership-cards {
+        flex: 0 0 340px;
     }
 }
