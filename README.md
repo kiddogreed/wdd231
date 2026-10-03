@@ -216,4 +216,64 @@ Chamber site.
   `animation-delay` per `:nth-child` avoided any JavaScript/IntersectionObserver complexity for
   what is ultimately a one-time, page-load-only effect.
 
+## Week 5/6 — Individual Project Site Plan (Trentsy)
+
+### What I built
+
+A website plan document (`final/site-plan.html`) for my individual project, **Trentsy**, a
+curated thrift/vintage fashion and lifestyle catalog site I'm building for my wife's small
+business.
+
+1. **Folder structure** under `final/`, mirroring the mobile-first pattern used everywhere else
+   in the repo:
+   - `images/` → `mobileView.jpg` and `desktopView.jpg`, photographed hand-drawn wireframe
+     sketches of the home page at small and large viewport widths.
+   - `styles/` → `normalize.css`, `small.css` (base styles + the plan's own color variables),
+     `larger.css` (`min-width: 768px` media query).
+   - `scripts/` → `date.js` (footer copyright year + last-modified date).
+2. **`site-plan.html`** — a single page covering every required planning section: site name
+   (`Trentsy`, with the reasoning behind it), site purpose, three target-audience scenarios, a
+   color scheme swatch grid, a typography sample section, and the two wireframe images.
+3. **Color scheme & typography** — reused the palette and fonts already established in the
+   Trentsy prototype (`trentsy-backup/`) so the plan documents a scheme I'd already proven out:
+   primary/dark teal, soft cream, card white, accent gold, and dark body text, paired with
+   Cormorant Garamond (headings) and Montserrat (body/nav). The plan page itself is styled
+   exclusively with this palette, per the assignment requirement.
+
+### Testing
+
+Self-checked the finished page with the tools suggested in the assignment before calling it done:
+
+- **W3C Nu Html Checker** (validator.w3.org) — ran `final/site-plan.html` through the validator;
+  no errors after fixing a couple of stray unescaped characters.
+- **WebAIM Contrast Checker** — checked every text/background color pair from the swatch grid
+  against the colors actually used as text. Caught one failure: `.placeholder-note` used
+  `--accent-gold` (`#d4af37`) as text on a white card background, which only scores ~1.9:1
+  (fails WCAG AA for normal text).
+- **Lighthouse / DevTools** — ran an accessibility + best-practices pass on the local page to
+  confirm heading order, alt text, and color contrast all checked out after the fix.
+
+### Revisions
+
+- **Color contrast fix** — added a dedicated `--accent-gold-text: #7a5e19` custom property (a
+  darkened version of the accent gold) and switched `.placeholder-note` to use it instead of
+  `--accent-gold` directly. That raises the contrast ratio against the white card background to
+  a passing level while keeping `--accent-gold` itself available for non-text uses (borders,
+  swatches, decorative accents) where contrast rules don't apply.
+
+### Result
+
+- `final/site-plan.html` — the graded individual project site plan.
+
+### Lessons learned
+
+- Running the contrast checker against every text color *as used*, not just the raw palette, is
+  what caught the issue — `#d4af37` looks like a reasonable accent in the swatch circles, but it
+  only fails once it's used as actual paragraph text on a light background. Splitting "decorative
+  accent gold" from "text-safe gold" into two custom properties fixed it without losing the gold
+  branding accent elsewhere on the page.
+- Reusing the color/typography decisions already made in `trentsy-backup/` (my earlier prototype)
+  meant the site plan's color-scheme and typography sections were documenting real, already-tested
+  choices instead of picking colors from scratch and hoping they'd hold up to validation later.
+
 
