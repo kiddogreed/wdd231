@@ -1,0 +1,253 @@
+/* ==========================================================================
+   Trentsy site-plan color scheme & typography
+   ========================================================================== */
+:root {
+    --primary-teal: #2f6063;
+    --dark-teal: #1f4244;
+    --soft-cream: #faf8f5;
+    --card-bg: #ffffff;
+    --text-dark: #2c3e50;
+    --text-light: #666666;
+    --accent-gold: #d4af37;
+    --accent-gold-text: #7a5e19;
+    --border-color: #e5e5e5;
+    --radius: 8px;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--soft-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--dark-teal);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--primary-teal);
+}
+
+code {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.9em;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header {
+    background-color: var(--primary-teal);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin: 0.25rem 0;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.header-tagline {
+    font-style: italic;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+nav {
+    background-color: var(--dark-teal);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--primary-teal);
+}
+
+/* ==========================================================================
+   Main layout
+   ========================================================================== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.5rem;
+}
+
+.card ul {
+    padding-left: 1.25rem;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* ==========================================================================
+   Color scheme swatches
+   ========================================================================== */
+.swatch-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.swatch {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.swatch-color {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.swatch p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.swatch code {
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   Typography samples
+   ========================================================================== */
+.type-sample {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--soft-cream);
+    border-radius: var(--radius);
+}
+
+.font-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    margin: 0 0 0.35rem 0;
+}
+
+.font-heading-sample {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--dark-teal);
+    margin: 0;
+}
+
+.font-body-sample {
+    font-family: var(--font-body);
+    margin: 0;
+}
+
+/* ==========================================================================
+   Wireframes
+   ========================================================================== */
+.placeholder-note {
+    font-size: 0.85rem;
+    color: var(--accent-gold-text);
+    font-weight: 600;
+}
+
+.wireframe-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.wireframe-grid figure {
+    margin: 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.wireframe-grid figcaption {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: var(--dark-teal);
+    color: #fff;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}

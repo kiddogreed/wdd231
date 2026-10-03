@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Larger screens (768px and up)
+   ========================================================================== */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav a {
+        flex: 0 1 auto;
+        padding: 0.9rem 1.5rem;
+    }
+
+    main {
+        padding: 2rem 1.5rem;
+    }
+
+    .card {
+        padding: 1.75rem;
+    }
+
+    .swatch-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .wireframe-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
