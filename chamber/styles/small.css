@@ -708,6 +708,111 @@ main > h1 {
 }
 
 /* ==========================================================================
+   Discover page: visit banner
+   ========================================================================== */
+.discover-intro {
+    color: var(--text-muted);
+    max-width: 65ch;
+}
+
+.visit-banner {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Discover page: card grid (named grid areas, mobile-first single column)
+   ========================================================================== */
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "item1"
+        "item2"
+        "item3"
+        "item4"
+        "item5"
+        "item6"
+        "item7"
+        "item8";
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.discover-grid .card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.discover-grid .card:nth-child(1) { grid-area: item1; }
+.discover-grid .card:nth-child(2) { grid-area: item2; }
+.discover-grid .card:nth-child(3) { grid-area: item3; }
+.discover-grid .card:nth-child(4) { grid-area: item4; }
+.discover-grid .card:nth-child(5) { grid-area: item5; }
+.discover-grid .card:nth-child(6) { grid-area: item6; }
+.discover-grid .card:nth-child(7) { grid-area: item7; }
+.discover-grid .card:nth-child(8) { grid-area: item8; }
+
+.discover-grid .card figure {
+    margin: -1rem -1rem 0.75rem -1rem;
+    overflow: hidden;
+}
+
+.discover-grid .card figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* no hover effect on small screens per assignment requirements */
+}
+
+.discover-grid .card h2 {
+    margin: 0 0 0.4rem 0;
+    background: none;
+    color: var(--color-primary);
+    text-align: left;
+    padding: 0;
+    border-radius: 0;
+}
+
+.discover-grid .card address {
+    font-style: normal;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.discover-grid .card p {
+    flex: 1;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 0.85rem 0;
+}
+
+.discover-grid .card .card-button {
+    align-self: flex-start;
+    background-color: var(--color-accent);
+    color: var(--text-main);
+    border: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.discover-grid .card .card-button:hover,
+.discover-grid .card .card-button:focus {
+    background-color: var(--color-accent-dark);
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 footer {

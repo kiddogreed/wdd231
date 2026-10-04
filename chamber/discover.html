@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You | Makati Chamber of Commerce</title>
-    <meta name="description" content="Thank you for applying for membership with the Makati Chamber of Commerce.">
+    <title>Discover | Makati Chamber of Commerce</title>
+    <meta name="description" content="Discover eight must-see places in Makati City, from parks and museums to markets and nightlife.">
     <meta name="author" content="John Russelle R Domingo">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
     <!-- Facebook / Open Graph -->
-    <meta property="og:title" content="Thank You | Makati Chamber of Commerce">
-    <meta property="og:description" content="Thank you for applying for membership with the Makati Chamber of Commerce.">
+    <meta property="og:title" content="Discover | Makati Chamber of Commerce">
+    <meta property="og:description" content="Discover eight must-see places in Makati City, from parks and museums to markets and nightlife.">
     <meta property="og:image" content="https://kiddogreed.github.io/wdd231/chamber/images/chamber-share.svg">
-    <meta property="og:url" content="https://kiddogreed.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:url" content="https://kiddogreed.github.io/wdd231/chamber/discover.html">
     <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
@@ -30,7 +30,7 @@
     <!-- JavaScript Files -->
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/date.js" defer></script>
-    <script src="scripts/thankyou.js" defer></script>
+    <script type="module" src="scripts/discover.js"></script>
 </head>
 <body>
     <header>
@@ -45,45 +45,31 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="directory.html">Directory</a></li>
-            <li><a href="join.html" class="active" aria-current="page">Join</a></li>
-            <li><a href="discover.html">Discover</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
         </ul>
     </nav>
 
     <main>
-        <h1>Thank You for Applying!</h1>
-        <p>We appreciate your interest in joining the Makati Chamber of Commerce. A member of our team will be in touch shortly to complete your membership.</p>
+        <h1>Discover Makati</h1>
+        <p class="discover-intro">Explore eight must-see places that make Makati City a vibrant hub for business, culture, and community &mdash; perfect for members, visitors, and new residents alike.</p>
 
-        <section class="card application-summary">
-            <h2>Application Summary</h2>
-            <dl id="application-details">
-                <div class="detail-row">
-                    <dt>First Name</dt>
-                    <dd id="out-first-name"></dd>
-                </div>
-                <div class="detail-row">
-                    <dt>Last Name</dt>
-                    <dd id="out-last-name"></dd>
-                </div>
-                <div class="detail-row">
-                    <dt>Email Address</dt>
-                    <dd id="out-email"></dd>
-                </div>
-                <div class="detail-row">
-                    <dt>Mobile Phone</dt>
-                    <dd id="out-phone"></dd>
-                </div>
-                <div class="detail-row">
-                    <dt>Business/Organization Name</dt>
-                    <dd id="out-business-name"></dd>
-                </div>
-                <div class="detail-row">
-                    <dt>Submitted</dt>
-                    <dd id="out-timestamp"></dd>
-                </div>
-            </dl>
+        <section id="visit-message" class="visit-banner" aria-live="polite"></section>
+
+        <section id="discover-grid" class="discover-grid" aria-label="Places of interest in Makati City">
+            <!-- Dynamically populated via discover.js -->
         </section>
     </main>
+
+    <dialog id="discover-modal" class="benefits-modal">
+        <h2 id="discover-modal-title"></h2>
+        <figure>
+            <img id="discover-modal-img" src="" alt="" width="300" height="200">
+        </figure>
+        <address id="discover-modal-address"></address>
+        <p id="discover-modal-desc"></p>
+        <button id="discover-modal-close" class="modal-close" type="button">Close</button>
+    </dialog>
 
     <footer>
         <div class="footer-contact">
