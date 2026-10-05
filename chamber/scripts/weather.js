@@ -1,4 +1,5 @@
-// Replace with your own OpenWeatherMap API key: https://openweathermap.org/api
+// Get your own free API key at https://home.openweathermap.org/api_keys and paste it below.
+// New keys can take up to a couple of hours to activate after you sign up.
 const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
 const city = 'Makati';
 const country = 'PH';
@@ -8,9 +9,14 @@ const currentTempEl = document.getElementById('current-temp');
 const weatherDescEl = document.getElementById('weather-desc');
 const forecastEl = document.getElementById('forecast');
 
+const hasApiKey = apiKey && apiKey !== 'YOUR_OPENWEATHERMAP_API_KEY';
+
 async function getCurrentWeather() {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=${units}&appid=${apiKey}`);
+        if (!response.ok) {
+            throw new Error(`OpenWeatherMap request failed (${response.status})`);
+        }
         const data = await response.json();
         displayCurrentWeather(data);
     } catch (error) {
@@ -30,6 +36,9 @@ function displayCurrentWeather(data) {
 async function getForecast() {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=${units}&appid=${apiKey}`);
+        if (!response.ok) {
+            throw new Error(`OpenWeatherMap request failed (${response.status})`);
+        }
         const data = await response.json();
         displayForecast(data.list);
     } catch (error) {
@@ -60,5 +69,11 @@ function displayForecast(list) {
     });
 }
 
-getCurrentWeather();
-getForecast();
+if (hasApiKey) {
+    getCurrentWeather();
+    getForecast();
+} else {
+    weatherDescEl.textContent = 'Add your OpenWeatherMap API key in scripts/weather.js to show live weather.';
+    forecastEl.innerHTML = '';
+    console.warn('weather.js: set a real OpenWeatherMap API key in the "apiKey" constant to enable the weather widget.');
+}

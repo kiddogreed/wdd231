@@ -7,6 +7,8 @@
     --color-primary-dark-rgb: 16, 38, 47;
     --color-accent: #ff8552;
     --color-accent-dark: #e0703f;
+    /* darker accent used for text/links so it meets the 4.5:1 WCAG AA contrast ratio on light backgrounds */
+    --color-accent-link: #ba4d1e;
     --color-white: #fff;
     --color-error: #c0392b;
     --bg-body: #f4f7f8;
@@ -21,8 +23,11 @@
     --member-text: #7a5b1e;
     --silver-bg: #e7ebee;
     --silver-border: #9aa7ad;
+    /* darker variants used for badge text so they meet the 4.5:1 WCAG AA contrast ratio on their badge backgrounds */
+    --silver-text: #57656b;
     --gold-bg: #fdf3d9;
     --gold-border: #d9a441;
+    --gold-text: #87611b;
     --bronze-border: #c67c3f;
     --radius: 8px;
     --font-body: 'Poppins', sans-serif;
@@ -118,6 +123,7 @@ nav a {
 nav a:hover,
 nav a:focus {
     background-color: var(--color-accent-dark);
+    color: var(--text-main);
 }
 
 nav a.active {
@@ -338,7 +344,7 @@ main > h1 {
 }
 
 .spotlight-info a {
-    color: var(--color-accent-dark);
+    color: var(--color-accent-link);
     overflow-wrap: break-word;
 }
 
@@ -415,7 +421,7 @@ main > h1 {
 }
 
 .member-card a {
-    color: var(--color-accent-dark);
+    color: var(--color-accent-link);
     overflow-wrap: break-word;
 }
 
@@ -437,13 +443,13 @@ main > h1 {
 
 .membership-badge.silver {
     background-color: var(--silver-bg);
-    color: var(--silver-border);
+    color: var(--silver-text);
     border: 1px solid var(--silver-border);
 }
 
 .membership-badge.gold {
     background-color: var(--gold-bg);
-    color: var(--gold-border);
+    color: var(--gold-text);
     border: 1px solid var(--gold-border);
 }
 
@@ -519,7 +525,7 @@ main > h1 {
 .join-form input:focus,
 .join-form select:focus,
 .join-form textarea:focus {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-accent-link);
     outline-offset: 1px;
 }
 
@@ -604,7 +610,7 @@ main > h1 {
 }
 
 .membership-card a {
-    color: var(--color-accent-dark);
+    color: var(--color-accent-link);
     font-weight: 600;
     text-decoration: none;
 }
