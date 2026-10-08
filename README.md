@@ -276,4 +276,57 @@ Self-checked the finished page with the tools suggested in the assignment before
   meant the site plan's color-scheme and typography sections were documenting real, already-tested
   choices instead of picking colors from scratch and hoping they'd hold up to validation later.
 
+## Week 6 — Individual Project Final Site (Trentsy)
+
+### What I built
+
+The graded 3-page Trentsy shop, replacing the old `trentsy-backup/` prototype with a real,
+course-compliant build in `final/`.
+
+- **Pages**: `index.html` (hero, categories, 6 featured products), `catalog.html` (full 18-item
+  catalog with category + favorites filters), `contact.html` (pre-order form + contact info),
+  and `form-action.html` (confirmation page, not one of the 3 graded pages).
+- **Data & images**: `data/products.json` (18 products, 3 categories, 9 fields each) fetched with
+  `fetch`/`try...catch`; replaced the prototype's hotlinked Unsplash photos with original,
+  lightweight local SVG illustrations (logo, favicon, hero motif, 18 product icons).
+- **ES modules** in `scripts/`: shared `data.mjs`, `render.mjs`, `modal.mjs`, `favorites.mjs`,
+  `format.mjs` reused by page-entry modules `home.mjs`/`catalog.mjs`/`contact.mjs`/
+  `form-action.mjs` — one render/modal/favorite implementation powers both the home and catalog
+  grids.
+- **Features**: accessible `<dialog>` quick-view modal, `localStorage` favorites + pre-order
+  draft autosave, responsive hamburger nav, and a validated HTML form (fieldset/radio/select/
+  datalist) that submits via `GET` to the confirmation page.
+
+### Testing
+
+Served the folder locally and drove it with Playwright: confirmed fetch/render, category and
+favorites filtering, favorite persistence across reloads, native form-validation blocking empty
+submits, no duplicate element IDs, 320px width with zero horizontal scroll, and per-page transfer
+size (74–137 KB, well under the 500 KB budget).
+
+### Revisions
+
+- **Modal layout bug** — the modal's "Save to Favorites" button shared a `.favorite-btn` class
+  with the absolutely-positioned card heart icon, so it inherited `position: absolute` and
+  escaped the dialog's layout. Fixed by giving the modal button its own class.
+- **Font weight trim** — the Google Fonts link requested several unused weights; trimmed it to
+  only the weights actually used in CSS, cutting page weight further.
+
+### Result
+
+- `final/index.html`, `final/catalog.html`, `final/contact.html` — the three graded pages.
+- `final/form-action.html` — confirmation page (not counted toward the 3-page requirement).
+
+### Lessons learned
+
+- Centralizing render/filter/modal logic in a few shared `.mjs` modules let `index.html` and
+  `catalog.html` reuse the exact same product-card and quick-view code instead of duplicating it.
+- Reusing a CSS class name across two visually different contexts (card heart vs. modal button)
+  is an easy way to introduce layout bugs — scoping/renaming classes per component avoided it.
+- Generating original SVG artwork instead of hotlinking stock photos sidestepped copyright
+  concerns entirely and kept every page a fraction of the 500 KB budget.
+- Scripting real interactions with Playwright (clicks, form fills, viewport resizing) caught the
+  modal bug that a plain code read-through missed, and gave concrete numbers (page weight, scroll
+  width) instead of guesses.
+
 
