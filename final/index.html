@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trentsy | Curated Thrift Fashion, Watches &amp; Mugs</title>
+    <meta name="description" content="Trentsy is a curated online shop for thrifted apparel, fashion watches, and aesthetic mugs. Spot the trend, claim your style.">
+    <meta name="author" content="John Russelle R Domingo">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Trentsy | Curated Thrift Fashion, Watches &amp; Mugs">
+    <meta property="og:description" content="Spot the trend, claim your style. Shop curated thrifted apparel, fashion watches, and aesthetic mugs.">
+    <meta property="og:image" content="https://kiddogreed.github.io/wdd231/final/images/og-banner.svg">
+    <meta property="og:url" content="https://kiddogreed.github.io/wdd231/final/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/shop-base.css">
+    <link rel="stylesheet" href="styles/shop-large.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script type="module" src="scripts/home.mjs"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <p class="announcement-bar">Spot the trend, claim your style! Free local pickup on pre-orders.</p>
+
+    <header class="site-header">
+        <div class="header-row">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.svg" alt="Trentsy logo" width="42" height="42">
+                <span>Trentsy</span>
+            </a>
+            <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+        </div>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="contact.html#preorder-form">Pre-Order</a></li>
+                <li><a href="contact.html#contact-info">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-subtitle">Established 2026</p>
+                <h1>Your New Favorite Destination for Fashion &amp; Lifestyle</h1>
+                <p class="tagline">Curated thrift apparel, elegant timepieces, and aesthetic ceramic homeware &mdash; one piece at a time.</p>
+                <a href="catalog.html" class="btn btn-primary">Shop the Catalog</a>
+            </div>
+        </section>
+
+        <section class="categories" aria-label="Shop by category">
+            <a class="category-card" href="catalog.html">
+                <span class="category-icon" aria-hidden="true">&#10022;</span>
+                <h3>All</h3>
+                <p>Browse everything</p>
+            </a>
+            <a class="category-card" href="catalog.html?category=apparel">
+                <span class="category-icon" aria-hidden="true">&#128084;</span>
+                <h3>Apparel</h3>
+                <p>Thrifted fashion finds</p>
+            </a>
+            <a class="category-card" href="catalog.html?category=watches">
+                <span class="category-icon" aria-hidden="true">&#8986;</span>
+                <h3>Watches</h3>
+                <p>Vintage &amp; modern timepieces</p>
+            </a>
+            <a class="category-card" href="catalog.html?category=mugs">
+                <span class="category-icon" aria-hidden="true">&#9749;</span>
+                <h3>Mugs</h3>
+                <p>Aesthetic ceramic homeware</p>
+            </a>
+        </section>
+
+        <div class="section-heading">
+            <h2>Featured Products</h2>
+            <p>A rotating pick of our most-loved pieces, straight from the current catalog.</p>
+        </div>
+        <div class="product-grid" id="featured-grid">
+            <p class="no-results">Loading featured products&hellip;</p>
+        </div>
+
+        <section class="social-banner">
+            <h2>Join the #Trentsy Style Community</h2>
+            <p>Follow us on TikTok, Instagram, and Facebook for daily drops and style inspiration.</p>
+            <div class="social-buttons">
+                <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn">Facebook</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn">Instagram</a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn">TikTok</a>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="product-modal" aria-labelledby="modal-title">
+        <div class="modal-inner" id="modal-content"></div>
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>TRENTSY</h3>
+                <p>Spot the trend, claim your style!</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="catalog.html">Full Catalog</a></li>
+                    <li><a href="catalog.html?category=apparel">Apparel</a></li>
+                    <li><a href="catalog.html?category=watches">Watches</a></li>
+                    <li><a href="catalog.html?category=mugs">Mugs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="contact.html#preorder-form">Pre-Order</a></li>
+                    <li><a href="contact.html#contact-info">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentyear"></span> Trentsy &bull; John Russelle R Domingo &bull; WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+        <details class="attributions-details wrapper">
+            <summary>Attributions</summary>
+            <p>Logo, favicon, hero motif, and all product photography are original flat-design SVG illustrations created for this project. Typefaces: <a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">Cormorant Garamond</a> and <a href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener">Montserrat</a> via Google Fonts.</p>
+        </details>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Trentsy shop styles - larger screens (768px and up)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .header-row {
+        padding: 1rem 1.5rem;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    #primary-nav {
+        max-height: none;
+        overflow: visible;
+        background: transparent;
+    }
+
+    #primary-nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+
+    #primary-nav a {
+        color: var(--dark-teal);
+        border-top: none;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+    }
+
+    #primary-nav a:hover,
+    #primary-nav a:focus,
+    #primary-nav a.active {
+        background-color: var(--primary-teal);
+        color: #fff;
+    }
+
+    .nav-flex {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .hero {
+        padding: 5rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .categories {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 3rem 1.5rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 0 1.5rem 3.5rem 1.5rem;
+    }
+
+    .section-heading,
+    .filter-bar,
+    .page-intro {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .contact-sections {
+        grid-template-columns: 3fr 2fr;
+        padding: 1.5rem 1.5rem 4rem 1.5rem;
+        align-items: start;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero h1 {
+        font-size: 3.4rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}

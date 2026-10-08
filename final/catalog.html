@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog | Trentsy</title>
+    <meta name="description" content="Browse Trentsy's full catalog of thrifted apparel, fashion watches, and aesthetic mugs. Filter by category or view your saved favorites.">
+    <meta name="author" content="John Russelle R Domingo">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Catalog | Trentsy">
+    <meta property="og:description" content="Browse the full Trentsy catalog of thrifted apparel, fashion watches, and aesthetic mugs.">
+    <meta property="og:image" content="https://kiddogreed.github.io/wdd231/final/images/og-banner.svg">
+    <meta property="og:url" content="https://kiddogreed.github.io/wdd231/final/catalog.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/shop-base.css">
+    <link rel="stylesheet" href="styles/shop-large.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script type="module" src="scripts/catalog.mjs"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <p class="announcement-bar">Spot the trend, claim your style! Free local pickup on pre-orders.</p>
+
+    <header class="site-header">
+        <div class="header-row">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.svg" alt="Trentsy logo" width="42" height="42">
+                <span>Trentsy</span>
+            </a>
+            <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+        </div>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html" class="active" aria-current="page">Catalog</a></li>
+                <li><a href="contact.html#preorder-form">Pre-Order</a></li>
+                <li><a href="contact.html#contact-info">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="page-intro">
+            <h1>Full Catalog</h1>
+            <p>Every thrifted apparel piece, fashion watch, and aesthetic mug currently available &mdash; filter by category or check your saved favorites.</p>
+        </div>
+
+        <div class="filter-bar">
+            <button type="button" class="tab-btn active" data-category="all" aria-pressed="true">All</button>
+            <button type="button" class="tab-btn" data-category="apparel" aria-pressed="false">Apparel</button>
+            <button type="button" class="tab-btn" data-category="watches" aria-pressed="false">Watches</button>
+            <button type="button" class="tab-btn" data-category="mugs" aria-pressed="false">Mugs</button>
+            <label class="favorites-toggle">
+                <input type="checkbox" id="favorites-only">
+                Favorites only
+            </label>
+        </div>
+
+        <p class="section-heading" id="result-count">18 items</p>
+
+        <div class="product-grid" id="catalog-grid">
+            <p class="no-results">Loading catalog&hellip;</p>
+        </div>
+    </main>
+
+    <dialog id="product-modal" aria-labelledby="modal-title">
+        <div class="modal-inner" id="modal-content"></div>
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>TRENTSY</h3>
+                <p>Spot the trend, claim your style!</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="catalog.html">Full Catalog</a></li>
+                    <li><a href="catalog.html?category=apparel">Apparel</a></li>
+                    <li><a href="catalog.html?category=watches">Watches</a></li>
+                    <li><a href="catalog.html?category=mugs">Mugs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="contact.html#preorder-form">Pre-Order</a></li>
+                    <li><a href="contact.html#contact-info">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentyear"></span> Trentsy &bull; John Russelle R Domingo &bull; WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+        <details class="attributions-details wrapper">
+            <summary>Attributions</summary>
+            <p>Logo, favicon, hero motif, and all product photography are original flat-design SVG illustrations created for this project. Typefaces: <a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">Cormorant Garamond</a> and <a href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener">Montserrat</a> via Google Fonts.</p>
+        </details>
+    </footer>
+</body>
+</html>

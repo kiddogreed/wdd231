@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Received | Trentsy</title>
+    <meta name="description" content="Confirmation summary for a Trentsy pre-order request submission.">
+    <meta name="author" content="John Russelle R Domingo">
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Request Received | Trentsy">
+    <meta property="og:description" content="Confirmation summary for a Trentsy pre-order request submission.">
+    <meta property="og:image" content="https://kiddogreed.github.io/wdd231/final/images/og-banner.svg">
+    <meta property="og:url" content="https://kiddogreed.github.io/wdd231/final/form-action.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/shop-base.css">
+    <link rel="stylesheet" href="styles/shop-large.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script type="module" src="scripts/form-action.mjs"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-row">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.svg" alt="Trentsy logo" width="42" height="42">
+                <span>Trentsy</span>
+            </a>
+            <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">&#9776;</button>
+        </div>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="contact.html#preorder-form">Pre-Order</a></li>
+                <li><a href="contact.html#contact-info">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="page-intro">
+            <h1>Thank You for Your Request!</h1>
+            <p>We've received your pre-order details below. A Trentsy team member will follow up using your preferred contact method within 1-2 business days.</p>
+        </div>
+
+        <section class="contact-card summary-card wrapper" aria-labelledby="summary-heading">
+            <h2 id="summary-heading">Request Summary</h2>
+            <dl id="order-details"></dl>
+            <p class="hint">Submitted: <span id="submitted-at"></span></p>
+            <p><a href="catalog.html" class="btn btn-outline">Continue Browsing the Catalog</a></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentyear"></span> Trentsy &bull; John Russelle R Domingo &bull; WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
